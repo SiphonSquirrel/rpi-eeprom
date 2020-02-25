@@ -1,0 +1,15 @@
+- name: Run full=upgrade
+  apt:  update_cache=yes upgrade=full state=latest
+
+- name: Install rpi-eeprom
+  apt:
+    name: rpi-eeprom
+    state: latest
+
+- name: Check reboot
+  command: rpi-eeprom-update
+  register: update_check
+
+- name: Do Reboot
+  reboot:
+  when: "'update required' in update_check.stdout"
