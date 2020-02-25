@@ -1,7 +1,10 @@
 rpi-eeprom
 ==========
 
-Ansible Task for Raspberry PI 4's eeprom updater
+Ansible Task for Raspberry PI 4's eeprom updater.
+Based on the official instructions here: https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md
+
+**Note:** This role will reboot your PI automatically if the eeprom needs to be updated.
 
 Requirements
 ------------
